@@ -31,6 +31,19 @@ var questions = [
         "When a biker says they have \"road rash\",what does this tell you?",
       choices: ["The bike has rust", "The bike needs new tires", "They have had an accident"],
       answer: "They have had an accident"
-    }
+    },
+    {
+      title:
+        "What is a motorcycle with long forks and stretched-out look called?",
+      choices: ["Supermoto bike", "Chopper", "Cruiser", "Sportster"],
+      answer: "Choppert"
+    },
+    {
+      title:
+        "What are ape hangers?",
+      choices: ["Very tall handlebars", "Very loud motorcycles", "Motorcycles that are geared low", "Motorcycles hauling trailers"],
+      answer: "Very tall handlebars"
+    },
+  
     
   ];
