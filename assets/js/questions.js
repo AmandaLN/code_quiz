@@ -13,9 +13,9 @@ var questions = [
     {
       title: "When it comes to clothing you wear on a motorcycle, which is the correct phrase?",
       choices: [
-        "Dress for the slide, not the ride.",
-        "Dress for the ease, not the breeze.",
-        "Dress for the wind, not the bend.",
+        "Dress for the slide, not the ride",
+        "Dress for the ease, not the breeze",
+        "Dress for the wind, not the bend",
         "all of the above"
       ],
       answer: "Dress for the slide, not the ride"
@@ -36,13 +36,31 @@ var questions = [
       title:
         "What is a motorcycle with long forks and stretched-out look called?",
       choices: ["Supermoto bike", "Chopper", "Cruiser", "Sportster"],
-      answer: "Choppert"
+      answer: "Chopper"
     },
     {
       title:
         "What are ape hangers?",
       choices: ["Very tall handlebars", "Very loud motorcycles", "Motorcycles that are geared low", "Motorcycles hauling trailers"],
       answer: "Very tall handlebars"
+    },
+    {
+      title:
+        "How many lanes positions are available to you in a single lane?",
+      choices: ["One", "Two", "Three", "Four"],
+      answer: "Three"
+    },
+    {
+      title:
+        "Because a motorcycle's brake light is not as visible as the brake lights on a car, you should?",
+      choices: ["flash your brake light whenever you think it may not be seen", "beep your horn whenever you're about to stop", "brake only when absolutely necessary", "install extra lights on your motorcycle"],
+      answer: "flash your brake light whenever you think it may not be seen"
+    },
+    {
+      title:
+        "While you are stopped at a stop sign, your motorcycle should?",
+      choices: ["remain in second gear", "remain in first gear", "remain in third gear", "remain in neutral"],
+      answer: "remain in first gear"
     },
   
     
