@@ -16,19 +16,20 @@ img{
 
 h1{
     text-align: center;
+    font-weight: bolder;
 }
 
 a{
-    color: orangered;
+    color: rgb(206, 133, 107);
     text-decoration: none;
     transition: color 0.1s;
 }
 
 a:hover {
-    color: peru;
+    color: rgb(231, 218, 204);
 }
 
-button {
+.button {
     display: inline-block;
     margin: 5px;
     cursor: pointer;
@@ -40,10 +41,12 @@ button {
     
 }
 
-li{}
+li {
+
+}
 
 .wrapper{
-    margin: 100px auto 100px auto;
+    margin: 50px auto 0px auto;
     max-width: 600px;
 }
 
