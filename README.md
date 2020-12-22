@@ -10,9 +10,9 @@ For this quiz timer will start to count down after you click the start button. A
 *JavaScript
 
 ## Usage
-![Screenshot1](./assets/images/Screenshot (25).png)
-![Screenshot2](./assets/images/Screenshot (24).png)
-![Screenshot3](./assets/images/Screenshot (23).png)
+![Screenshot1](./assets/images/Screenshot(25).png)
+![Screenshot2](./assets/images/Screenshot(24).png)
+![Screenshot3](./assets/images/Screenshot(23).png)
 
 
 ## Maintainer
