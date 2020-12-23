@@ -5,9 +5,9 @@ For this quiz timer will start to count down after you click the start button. A
 *https://amandaln.github.io/code_quiz/
 
 ## Technologies
-*HTML
-*CSS/Bootstrap
-*JavaScript
+HTML
+CSS/Bootstrap
+JavaScript
 
 ## Usage
 ![Screenshot1](./assets/images/Screenshot(25).png)
