@@ -1,3 +1,4 @@
+$(document).ready(function() {
 // start button and store
 var startBtn = document.getElementById("start");
 var questionsElement = document.getElementById("questions");
@@ -10,10 +11,12 @@ var pElement = document.querySelector("#msgCorrect");
 var questionsIndex = -1;
 var currentQuestion;
 var correctAnswer;
+var timerInterval;
 var secondsLeft = 100;
-var submitScoreElement = document.querySelector("#submit-score");
-var userScoreElement = document.getElementById("user-score");
-var userNameInput;
+var submitBtn = document.getElementById("submit");
+var finalScoreEl = document.querySelector("#final-score");
+
+// submitBtn.addEventListener('click', saveUser);
 // event listener
 startBtn.onclick = startQuiz;
 
@@ -34,71 +37,95 @@ function startQuiz() {
 
 function getCurrentQuestion() {
     questionsIndex++
+    console.log(questionsIndex);
+    console.log(questions.length);
+
+    if (questionsIndex < questions.length){
+   
     questionsChoices.innerHTML = "";
 //print the title of the question
     questionTitle.textContent = questions[questionsIndex].title;
     correctAnswer = questions[questionsIndex].answer;
     currentQuestions = questions[questionsIndex].choices;
-console.log(currentQuestion);
 
 
-//var currentChoices = currentQuestion[questionsIndex].choices;
 
 // for loop 
-
 for (let i = 0; i < currentQuestions.length; i++) {
     var choices2 = document.createElement("li");
     choices2.textContent = currentQuestions[i];
     answerBtn = questionsChoices.appendChild(choices2).setAttribute("class", "list-group-item");
-
+    
     }
 }
-
-
+else{
+    clearInterval(timerInterval);
+    
+    sendMessage();
+}
+}
 
 function timeEl() {
-    
-    var timerInterval = setInterval(function() {
+    // timer added to page
+    timerInterval = setInterval(function() {
         secondsLeft--;
-        timeEll.textContent = secondsLeft + " seconds left till Game Over";
-    
+      
         if(secondsLeft === 0) {
-          clearInterval(timerInterval);
-          sendMessage();
+            clearInterval(timerInterval);
+            console.log("Timer Exipred");
+            sendMessage();
         }
-        
-    
+        timeEll.textContent = secondsLeft + " seconds left till Game Over";
       }, 1000);
 
 }
 
 function sendMessage() {
-    timeEll.textContent = " ";
-  
+    //timeEll.textContent = "";
+    
     var imgEl = document.createElement("img");
-  
+    
     imgEl.setAttribute("src", "./assets/images/game-over-escape-room_LI.jpg");
-
+    // add img to screen
     mainEl.appendChild(imgEl);
     mainEl.removeAttribute("class");
     questionsElement.setAttribute("class", "hide");
- 
+    finalScoreEl.innerHTML = secondsLeft;
+    userNameInput = document.getElementById("initials");
+    
+    // create a new object with name and score keys
+var newScore = {
+        name: userNameInput,
+        score: secondsLeft
+    };
+    submitBtn.onclick = submit;
+    // check if there are scores in local storage first and take value
+    //if not, make a blank array
+    var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
+    // push object into score array
+    highScores.push(newScore);
+    // turn objects into an array of strings + put it into local storage
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    
 }
+
+
 
 questionsChoices.addEventListener("click", function(event) {
 
-    if (correctAnswer === event.target.textContent) {   
+    if (correctAnswer === event.target.textContent) {  
+        // sec stay same 
         pElement.innerHTML = "YES!";
-     //   setTimeout(hideFeedback,1225);
-     //   showFeedback();   
-        
+     
     } else {
         pElement.innerHTML = "BOOO. NO!";
-      //  setTimeout(hideFeedback,1225);
+    //  wrong answer -10 sec
         secondsLeft = secondsLeft - 10;
-      //  showFeedback();
+        
     } 
 
 getCurrentQuestion();
 
 })
+
+});

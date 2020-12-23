@@ -20,7 +20,7 @@ h1{
 }
 
 a{
-    color: rgb(206, 133, 107);
+    color: rgb(10, 10, 10);
     text-decoration: none;
     transition: color 0.1s;
 }
@@ -28,6 +28,7 @@ a{
 a:hover {
     color: rgb(231, 218, 204);
 }
+
 
 .button {
     display: inline-block;
